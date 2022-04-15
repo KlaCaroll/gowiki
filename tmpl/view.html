@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="/static/TheStyle.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <h1>{{.Title}}</h1>
+        <form action="/search/" method="GET">
+            <input type="search" rows="1" cols="60" {{.Search}}>
+            <input type="submit" value="search">
+        </form>
+        <form action="/edit/{{.Title}}" method="POST">
+            <div>
+                {{.Body}}
+            </div>
+            <div>
+                <input type="submit" value="Edit">
+            </div>
+        </form>
+    </body>
+</html>

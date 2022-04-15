@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+       <link href="/static/TheStyle.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <h1>Editing {{printf "%s" .Title}}</h1>
+        <p>Modifier ou creer du contenu</p>
+        <form action="/view/home">
+            <button>Home</button>
+        </form>
+        <form action="/save/{{.Title}}" method="POST">
+            <textarea name="raw" rows="20" cols="80">{{.Raw}}</textarea>
+            <input type="submit" value="Save">
+        </form>
+    </body>
+</html>
