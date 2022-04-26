@@ -68,8 +68,6 @@ func saveHandler(w http.ResponseWriter, r *http.Request, title string) {
 }
 
 func searchHandler(w http.ResponseWriter, r *http.Request, title string) {
-	// trouver comment recuperer l' input !!!
-
 	filenames, err := filepath.Glob("data/" + title + ".txt")
 	if err != nil {
 		http.Redirect(w, r, "/edit/"+title, http.StatusFound)
